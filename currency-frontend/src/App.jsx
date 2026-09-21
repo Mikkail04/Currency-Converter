@@ -21,6 +21,7 @@ function App() {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     loadHistory();
@@ -41,7 +42,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:8081/convert",
+        `${API_URL}/convert`,
         {
           method: "POST",
           headers: {
@@ -80,7 +81,7 @@ function App() {
 
   async function loadHistory() {
     const response = await fetch(
-      "http://localhost:8081/history"
+      `${API_URL}/history`
     );
 
     const data = await response.json();
@@ -98,7 +99,7 @@ function App() {
     }
 
     await fetch(
-      `http://localhost:8081/history/${id}`,
+      `${API_URL}/history/${id}`,
       {
         method: "DELETE",
       }
