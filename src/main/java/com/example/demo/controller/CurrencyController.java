@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://currencyconversiontool.vercel.app/"})
 @Tag(
     name = "Currency Converter",
     description = "Endpoints for currency conversion and conversion history"
