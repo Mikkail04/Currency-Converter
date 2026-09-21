@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -66,7 +66,7 @@ public class CurrencyService {
         history.setAmount(amount);
         history.setConvertedAmount(convertedAmount);
         history.setExchangeRate(exchangeRate);
-        history.setTimestamp(LocalDateTime.now());
+        history.setTimestamp(ZonedDateTime.now());
 
         return repository.save(history);
     }

@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,7 +24,7 @@ public class ConversionHistory {
 
     private Double exchangeRate;
 
-    private LocalDateTime timestamp;
+    private ZonedDateTime timestamp;
 
     public ConversionHistory() {
     }
@@ -73,11 +73,11 @@ public class ConversionHistory {
         this.exchangeRate = exchangeRate;
     }
 
-    public LocalDateTime getTimestamp() {
+    public ZonedDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(ZonedDateTime timestamp) {
         this.timestamp = timestamp;
     }
 }
